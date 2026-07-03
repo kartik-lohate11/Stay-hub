@@ -1,5 +1,7 @@
 package com.stay.hub.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.stay.hub.enums.residence.GenderPreferenceType;
 import com.stay.hub.enums.residence.OccupancyType;
 import com.stay.hub.enums.residence.ResidenceType;
@@ -55,6 +57,7 @@ public class ResidenceData {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id", nullable = false)
+    @JsonBackReference
     private UserData owner;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -62,6 +65,7 @@ public class ResidenceData {
     private LocationData location;
 
     @OneToMany(mappedBy = "residence", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<ReviewData> reviews = new ArrayList<>();
 
 }

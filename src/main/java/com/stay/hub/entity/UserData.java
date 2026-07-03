@@ -1,5 +1,6 @@
 package com.stay.hub.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.stay.hub.enums.user.Role;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -33,9 +34,11 @@ public class UserData {
     private LocalDateTime updatedDate;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<ResidenceData> residences = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<ReviewData> reviews = new ArrayList<>();
 
 }

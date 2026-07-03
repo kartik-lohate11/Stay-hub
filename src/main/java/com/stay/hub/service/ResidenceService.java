@@ -4,9 +4,9 @@ import com.stay.hub.dto.ResidenceDto;
 import com.stay.hub.dto.request.ResidenceRequest;
 import com.stay.hub.dto.request.ResidenceSearchRequest;
 import org.springframework.data.domain.Page;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
+
 import java.util.List;
 
 public interface ResidenceService {
