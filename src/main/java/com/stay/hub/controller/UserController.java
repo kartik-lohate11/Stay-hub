@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 @Slf4j
 @RequiredArgsConstructor
 public class UserController {
@@ -68,7 +68,7 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping
+    @PostMapping("/verify")
     public ResponseEntity<?> verifyUser(@RequestBody LoginRequest request){
        return ResponseEntity.ok(userService.verifyUser(request));
     }

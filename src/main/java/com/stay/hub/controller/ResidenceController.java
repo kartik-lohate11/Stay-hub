@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/residence")
+@RequestMapping("/api/residence")
 @RequiredArgsConstructor
 public class ResidenceController {
 
